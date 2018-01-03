@@ -1,0 +1,167 @@
+/* Custom Stylesheet */
+
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444D55;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.ripple-text-blue {
+  color: #27a2db;
+}
+
+.ripple-text-link {
+  color: #27a2db !important;
+}
+
+.ripple-text-link:hover {
+  color: #43bded !important;
+}
+
+.ripple-blue {
+  background-color: #27a2db !important;
+}
+
+.btn-large.ripple-blue:hover {
+  background-color: #43bded !important;
+}
+
+.wallet-front {
+  position: relative;
+}
+
+.wallet-front #qrcode-address {
+  position: absolute;
+  top: 153px;
+  left: 51px;
+}
+
+.wallet-front #cleartext-address-1 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-weight: bold;
+  font-size: 18px;
+  transform: rotate(180deg);
+  color: black;
+}
+
+.wallet-front #cleartext-address-2 {
+  position: absolute;
+  top: 340px;
+  left: 50px;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+.wallet-front #qrcode-secret {
+  position: absolute;
+  top: 149px;
+  left: 1062px;
+}
+
+.wallet-front #cleartext-secret-1 {
+  position: absolute;
+  top: 100px;
+  left: 1020px;
+  font-weight: bold;
+  font-size: 13px;
+  transform: rotate(180deg);
+  color: black;
+}
+
+.wallet-front #cleartext-secret-2 {
+  position: absolute;
+  top: 310px;
+  left: 1020px;
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+body,
+nav {
+  color: #fff;
+  background: #222;
+}
+
+.section p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 17px !important;
+}
+
+.brand-logo img {
+  width: 150px;
+  position: relative;
+  top: 10px;
+}
+
+nav .brand-logo {
+  font-size: 1.5rem;
+  width: 350px;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
