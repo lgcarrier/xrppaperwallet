@@ -3,6 +3,18 @@ var api = new ripple.RippleAPI({
   server: 'wss://s1.ripple.com/'
 });
 
+printDivCSS = new String('<link href="css/printing.css" rel="stylesheet" type="text/css">')
+
+function printDiv(divId) {
+
+  window.frames["print_frame"].document.body.innerHTML = printDivCSS + document.getElementById(divId).outerHTML;
+  window.frames["print_frame"].window.focus();
+  setTimeout(function () {
+    window.frames["print_frame"].window.print();
+  }, 1000);
+
+}
+
 (function ($) {
 
   /**
@@ -19,6 +31,7 @@ var api = new ripple.RippleAPI({
    * set current account using an hardcoded
    */
   var account = config.wallets.new;
+
 
   /**
    * displayGeneratedAddress
@@ -45,8 +58,8 @@ var api = new ripple.RippleAPI({
 
     var qrcode = new QRCode(qrcodeAddress, {
       text: newAddress.address,
-      width: 128,
-      height: 128,
+      width: 125,
+      height: 125,
       colorDark: '#000000',
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H
@@ -54,8 +67,8 @@ var api = new ripple.RippleAPI({
 
     var qrcode = new QRCode(qrcodeSecret, {
       text: newAddress.secret,
-      width: 128,
-      height: 128,
+      width: 155,
+      height: 155,
       colorDark: '#000000',
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H

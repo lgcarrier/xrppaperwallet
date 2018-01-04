@@ -1,0 +1,63 @@
+.wallet-front {
+    position: relative;
+}
+
+.wallet-front #qrcode-address {
+    position: absolute;
+    top: 120px;
+    left: 40px;
+}
+
+.wallet-front #qrcode-address img {
+    width: 100px;
+    height: 100px;
+}
+
+.wallet-front #cleartext-address-1 {
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    transform: rotate(180deg);
+    color: black;
+}
+
+.wallet-front #cleartext-address-2 {
+    position: absolute;
+    top: 280px;
+    left: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+}
+
+.wallet-front #qrcode-secret {
+    position: absolute;
+    top: 102px;
+    left: 822px;
+}
+
+.wallet-front #qrcode-secret img {
+    width: 125px;
+    height: 125px;
+}
+
+.wallet-front #cleartext-secret-1 {
+    position: absolute;
+    top: 75px;
+    left: 800px;
+    font-weight: bold;
+    font-size: 12px;
+    transform: rotate(180deg);
+    color: black;
+}
+
+.wallet-front #cleartext-secret-2 {
+    position: absolute;
+    top: 250px;
+    left: 800px;
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+}

@@ -19,20 +19,23 @@
 </head>
 
 <body>
-    <nav class="ripple-text-blue" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">
-                <img src="vendor/ripple_logos/ripple_logo_small.png" />XRP Paper Wallet</a>
-        </div>
-    </nav>
-
+    <div class="navbar-fixed">
+        <nav class="ripple-text-blue" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo">
+                    <img src="vendor/ripple_logos/ripple_logo_small.png" />XRP Paper Wallet
+                    <span class="red-text">beta</span>
+                </a>
+            </div>
+        </nav>
+    </div>
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
                 <br>
                 <br>
-                <h1 class="header center ripple-text-blue text-lighten-2">Ripple XRP Paper Wallet</h1>
-                <div class="row center">
+                <h1 class="header">Ripple XRP Paper Wallet</h1>
+                <div class="row">
                     <h5 class="header col s12 light">Secure and easy way to generate a cold wallet.</h5>
                 </div>
                 <!-- <div class="row center">
@@ -104,7 +107,7 @@
                             online to service instant withdrawal requests.</p>
 
                         <div class="row center">
-                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank" class="btn-large waves-effect waves-light ripple-blue">Buy XRP</a>
+                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank" class="btn-large waves-effect waves-light ripple-white-btn">Buy XRP</a>
                         </div>
 
                     </div>
@@ -139,7 +142,7 @@
                     <div class="row">
                         <div class="col">
                             <div id="generated-paper-wallet">
-                                <div class="wallet-front">
+                                <div id="wallet-front" class="wallet-front">
                                     <img src="img/front-300dpi-ripple.jpg" width="100%" />
                                     <div id="qrcode-address"></div>
                                     <div id="qrcode-secret"></div>
@@ -156,19 +159,28 @@
                                     <div id="privkey_qr"></div> -->
                                 </div>
 
-                                <div class="wallet-back">
+                                <div class="row">
+                                    <div class="col s12 center">
+                                        <a href="javascript:printDiv('wallet-front');" class="btn-large waves-effect waves-light ripple-blue">
+                                            <i class="fas fa-print"></i>&nbsp;Print Front</a>
+                                    </div>
+                                </div>
+
+                                <div id="wallet-back" class="wallet-back">
                                     <img src="img/back-300dpi-ripple.jpg" width="100%" />
                                 </div>
 
+                                <div class="row">
+                                    <div class="col s12 center">
+                                        <a href="javascript:printDiv('wallet-back');" class="btn-large waves-effect waves-light ripple-blue">
+                                            <i class="fas fa-print"></i>&nbsp;Print Back</a>
+                                    </div>
+                                </div>
+
                             </div>
+                            <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 center">
-                    <a href="#" class="btn-large waves-effect waves-light ripple-blue">
-                        <i class="fas fa-print"></i>&nbsp;Print</a>
                 </div>
             </div>
 
@@ -177,7 +189,7 @@
                     <h3>This account is not activated yet...</h3>
                     <h4 class="ripple-text-blue">Next step is to fund your new address</h4>
                     <div class="row">
-                        <div class="col">
+                        <div class="col s12">
                             <p>To fund a new address, you must send enough XRP to meet the reserve requirement. Once created,
                                 an account exists in the XRP Ledger's data tree forever.</p>
                         </div>
@@ -261,16 +273,33 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">About</h5>
-                    <p class="grey-text text-lighten-4">We are a team of one working on this project not like it's our full time job. We are not affiliated to
-                        <a class="black-text" href="https://ripple.com" target="_blank">Ripple</a>.</p>
+                    <p class="grey-text text-lighten-4">The goal of this tool is to democratize Ripple XRP cold wallets. This project is not affiliated to
+                        <a class="black-text" href="https://ripple.com" target="_blank">Ripple</a>.
+                    </p>
                 </div>
                 <div class="col l3 s12">
-                    <h5 class="white-text">Connect</h5>
+                    <h5 class="white-text">Links</h5>
                     <ul>
                         <li>
                             <a class="white-text" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank">Project's Github</a>
                         </li>
+                        <li>
+                            <a class="white-text" href="https://ripple.com" target="_blank">Ripple</a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://ripple.com/build/" target="_blank">Ripple Developer Center</a>
+                        </li>
                     </ul>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Disclaimer</h5>
+                    <p class="grey-text text-lighten-4">Use at your own risk. Not responsible if anything goes wrong. Do your due diligence, you can review
+                        the code on GitHub.</p>
                 </div>
             </div>
         </div>
