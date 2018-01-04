@@ -80,6 +80,18 @@ footer.page-footer {
   background-color: #43bded !important;
 }
 
+.ripple-white-btn {
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(204, 204, 204, 0.1) !important;
+  border: 1px solid #ccc;
+}
+
+.ripple-white-btn:hover {
+  background: #fff;
+  background-color: rgba(204,204,204,0.3) !important;
+  border: 1px solid #ccc;
+}
+
 .wallet-front {
   position: relative;
 }
@@ -111,8 +123,8 @@ footer.page-footer {
 
 .wallet-front #qrcode-secret {
   position: absolute;
-  top: 149px;
-  left: 1062px;
+  top: 134px;
+  left: 1046px;
 }
 
 .wallet-front #cleartext-secret-1 {
@@ -153,15 +165,19 @@ nav {
 
 nav .brand-logo {
   font-size: 1.5rem;
-  width: 350px;
+  width: 450px;
 }
 
 td,
 th {
-    border: 1px solid black;
-    padding: 5px;
+  border: 1px solid black;
+  padding: 5px;
 }
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
+}
+
+#paper-wallet {
+  border: 1px dashed #fff;
 }
