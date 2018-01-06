@@ -81,14 +81,14 @@ footer.page-footer {
 }
 
 .ripple-white-btn {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   background-color: rgba(204, 204, 204, 0.1) !important;
   border: 1px solid #ccc;
 }
 
 .ripple-white-btn:hover {
   background: #fff;
-  background-color: rgba(204,204,204,0.3) !important;
+  background-color: rgba(204, 204, 204, 0.3) !important;
   border: 1px solid #ccc;
 }
 
@@ -98,52 +98,56 @@ footer.page-footer {
 
 .wallet-front #qrcode-address {
   position: absolute;
-  top: 153px;
-  left: 51px;
+  top: 118px;
+  left: 40px;
 }
 
 .wallet-front #cleartext-address-1 {
   position: absolute;
   top: 50px;
-  left: 50px;
+  left: 45px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   transform: rotate(180deg);
   color: black;
 }
 
 .wallet-front #cleartext-address-2 {
   position: absolute;
-  top: 340px;
-  left: 50px;
+  top: 260px;
+  left: 45px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   color: black;
 }
 
 .wallet-front #qrcode-secret {
   position: absolute;
-  top: 134px;
-  left: 1046px;
+  top: 102px;
+  left: 817px;
 }
 
 .wallet-front #cleartext-secret-1 {
   position: absolute;
-  top: 100px;
-  left: 1020px;
+  top: 70px;
+  left: 800px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 10px;
   transform: rotate(180deg);
   color: black;
 }
 
 .wallet-front #cleartext-secret-2 {
   position: absolute;
-  top: 310px;
-  left: 1020px;
+  top: 240px;
+  left: 800px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 10px;
   color: black;
+}
+
+.wallet-background, .wallet-front, .wallet-back {
+  width: 1000px;
 }
 
 body,
@@ -176,8 +180,4 @@ th {
 
 table {
   border-collapse: collapse;
-}
-
-#paper-wallet {
-  border: 1px dashed #fff;
 }
