@@ -140,10 +140,10 @@
                         <i class="fas fa-arrow-down"></i>
                     </h4>
                     <div class="row">
-                        <div class="col">
+                        <div class="col s12 center">
                             <div id="generated-paper-wallet">
                                 <div id="wallet-front" class="wallet-front">
-                                    <img src="img/front-300dpi-ripple.jpg" width="100%" />
+                                    <img class="wallet-background" src="img/front-300dpi-ripple.jpg"/>
                                     <div id="qrcode-address"></div>
                                     <div id="qrcode-secret"></div>
                                     <div id="cleartext-address-1"></div>
@@ -161,18 +161,18 @@
 
                                 <div class="row">
                                     <div class="col s12 center">
-                                        <a href="javascript:printDiv('wallet-front');" class="btn-large waves-effect waves-light ripple-blue">
+                                        <a href="javascript:printWallet('wallet-front');" class="btn-large waves-effect waves-light ripple-blue">
                                             <i class="fas fa-print"></i>&nbsp;Print Front</a>
                                     </div>
                                 </div>
 
                                 <div id="wallet-back" class="wallet-back">
-                                    <img src="img/back-300dpi-ripple.jpg" width="100%" />
+                                    <img class="wallet-background" src="img/back-300dpi-ripple.jpg"/>
                                 </div>
 
                                 <div class="row">
                                     <div class="col s12 center">
-                                        <a href="javascript:printDiv('wallet-back');" class="btn-large waves-effect waves-light ripple-blue">
+                                        <a href="javascript:printWallet('wallet-back');" class="btn-large waves-effect waves-light ripple-blue">
                                             <i class="fas fa-print"></i>&nbsp;Print Back</a>
                                     </div>
                                 </div>

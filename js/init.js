@@ -3,16 +3,14 @@ var api = new ripple.RippleAPI({
   server: 'wss://s1.ripple.com/'
 });
 
-printDivCSS = new String('<link href="css/printing.css" rel="stylesheet" type="text/css">')
+printingCSS = new String('<link href="css/printing.css" rel="stylesheet" type="text/css">')
 
-function printDiv(divId) {
-
-  window.frames["print_frame"].document.body.innerHTML = printDivCSS + document.getElementById(divId).outerHTML;
+function printWallet(side) {
+  window.frames["print_frame"].document.body.innerHTML = printingCSS + document.getElementById(side).outerHTML;
   window.frames["print_frame"].window.focus();
   setTimeout(function () {
     window.frames["print_frame"].window.print();
   }, 1000);
-
 }
 
 (function ($) {
@@ -58,8 +56,8 @@ function printDiv(divId) {
 
     var qrcode = new QRCode(qrcodeAddress, {
       text: newAddress.address,
-      width: 125,
-      height: 125,
+      width: 100,
+      height: 100,
       colorDark: '#000000',
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H
@@ -67,8 +65,8 @@ function printDiv(divId) {
 
     var qrcode = new QRCode(qrcodeSecret, {
       text: newAddress.secret,
-      width: 155,
-      height: 155,
+      width: 125,
+      height: 125,
       colorDark: '#000000',
       colorLight: '#ffffff',
       correctLevel: QRCode.CorrectLevel.H
