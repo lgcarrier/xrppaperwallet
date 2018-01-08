@@ -181,3 +181,12 @@ th {
 table {
   border-collapse: collapse;
 }
+
+.coinmarketcap-currency-widget > div {
+  color: #fff;
+  background: #222;
+}
+
+.ripple-text-gray {
+  color: #333 !important;
+}
