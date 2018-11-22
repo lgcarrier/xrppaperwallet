@@ -114,6 +114,7 @@ function printWallet(side) {
     displayFrontPaperWallet(newAddress);
     displayBackPaperWallet();
     $('#paper-wallet').show();
+    $('html,body').animate({scrollTop: $('#paper-wallet').offset().top-50},'slow');
   }
 
   /**
@@ -121,12 +122,12 @@ function printWallet(side) {
    */
   function generatePaperWallet() {
     api.connect().then(() => {
-      console.log('generateAddress');
+      // console.log('generateAddress');
       return api.generateAddress();
     }).then(newAddress => {
-      console.log(newAddress);
+      // console.log(newAddress);
       displayPaperWallet(newAddress);
-      console.log('generateAddress done');
+      // console.log('generateAddress done');
     }).then(() => {
       // return api.disconnect();
     }).then(() => {

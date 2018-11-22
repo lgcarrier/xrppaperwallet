@@ -13,6 +13,17 @@ nav .brand-logo {
   color: #444D55;
 }
 
+.brand-logo img {
+  margin-right: 10px;
+}
+
+.brand-logo span.tag-beta.red-text {
+  position: absolute;
+  top: -10px;
+  font-size: 12px;
+  right: 20px;
+}
+
 p {
   line-height: 2rem;
 }
@@ -43,6 +54,10 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+  .brand-logo img {
+    margin-left: 30px;
+  }
+
   #index-banner .section {
     top: 0;
   }
@@ -183,8 +198,11 @@ table {
 }
 
 .coinmarketcap-currency-widget > div {
-  color: #fff;
   background: #222;
+}
+
+.coinmarketcap-currency-widget > div span {
+  color: #ffffff !important;
 }
 
 .ripple-text-gray {
