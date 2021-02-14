@@ -11,10 +11,23 @@
     <link rel="stylesheet" href="vendor/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" type="image/png" href="vendor/ripple/img/favicon-32x32-new.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="vendor/ripple/img/favicon-16x16-new.png" sizes="16x16" />
-    <link rel="shortcut icon" href="vendor/ripple/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="vendor/ripple/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="vendor/ripple/XRP-Symbol-Kit/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-16x16.png">
+    <link rel="manifest" href="vendor/ripple/XRP-Symbol-Kit/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -22,8 +35,10 @@
         <nav class="ripple-text-blue" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="brand-logo">
-                    <img src="vendor/ripple_logos/ripple_logo_small.png" />XRP Paper Wallet
-                    <span class="red-text">beta</span>
+                        <img src="vendor/ripple/XRP-Symbol-Kit/text-mark/xrp-text-mark-white.svg" />Ripple XRP Paper Wallet
+                        <span class="tag-beta red-text">beta</span> 
+                    <!-- <img src="vendor/ripple_logos/ripple_logo_small.png" />XRP Paper Wallet
+                    <span class="red-text">beta</span> -->
                 </a>
             </div>
         </nav>
@@ -74,11 +89,13 @@
                         </h2>
                         <h5 class="center">Cold wallet</h5>
 
-                        <p class="light">Securely hold the majority of XRP and funds. To provide optimal security, this account's secret key
+                        <p class="light">Securely hold the majority of XRP and funds. To provide optimal security, this
+                            account's secret key
                             should be offline.</p>
 
                         <div class="row center">
-                            <a href="#paper-wallet" id="generate-paper-wallet" class="btn-large waves-effect waves-light ripple-blue">Generate a paper wallet</a>
+                            <a href="#paper-wallet" id="generate-paper-wallet" class="btn-large waves-effect waves-light ripple-blue">Generate
+                                a paper wallet</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +107,8 @@
                         </h2>
                         <h5 class="center">Warm wallet</h5>
 
-                        <p class="light">Provide an additional layer of security between the cold and hot wallets. Unlike a hot wallet, the
+                        <p class="light">Provide an additional layer of security between the cold and hot wallets.
+                            Unlike a hot wallet, the
                             secret key of a warm wallet does not need to be online.</p>
                     </div>
                 </div>
@@ -102,11 +120,13 @@
                         </h2>
                         <h5 class="center">Hot wallet</h5>
 
-                        <p class="light">Conduct the day-to-day business of managing XRP withdrawals and deposits. Hot wallets need to be
+                        <p class="light">Conduct the day-to-day business of managing XRP withdrawals and deposits. Hot
+                            wallets need to be
                             online to service instant withdrawal requests.</p>
 
                         <div class="row center">
-                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank" class="btn-large waves-effect waves-light ripple-white-btn">Buy XRP</a>
+                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank" class="btn-large waves-effect waves-light ripple-white-btn">Buy
+                                XRP</a>
                         </div>
 
                     </div>
@@ -116,7 +136,9 @@
             <div class="row">
                 <div class="col">
                     <p>You can replicate what financial institutions do and
-                        <a class="ripple-text-link" href="https://ripple.com/build/issuing-operational-addresses/" target="_blank">use multiple XRP Ledger addresses</a> to minimize the risk associated with a compromised secret key.
+                        <a class="ripple-text-link" href="https://ripple.com/build/issuing-operational-addresses/"
+                            target="_blank">use multiple XRP Ledger addresses</a> to minimize the risk associated with
+                        a compromised secret key.
                         The hot/warm/cold model is intended to balance security and convenience.</p>
                 </div>
             </div>
@@ -134,7 +156,7 @@
                         This is your new XRP paper wallet
                     </h3>
                     <h4 class="ripple-text-blue">
-                        <strong>do not share</strong>...
+                        <strong>do not share</strong>... it's
                         <strong>EXTREMELY</strong> precious&nbsp;
                         <i class="fas fa-arrow-down"></i>
                     </h4>
@@ -142,7 +164,7 @@
                         <div class="col s12 center">
                             <div id="generated-paper-wallet">
                                 <div id="wallet-front" class="wallet-front">
-                                    <img class="wallet-background" src="img/front-300dpi-ripple.jpg"/>
+                                    <img class="wallet-background" src="img/front-300dpi-ripple.jpg" />
                                     <div id="qrcode-address"></div>
                                     <div id="qrcode-secret"></div>
                                     <div id="cleartext-address-1"></div>
@@ -166,7 +188,7 @@
                                 </div>
 
                                 <div id="wallet-back" class="wallet-back">
-                                    <img class="wallet-background" src="img/back-300dpi-ripple.jpg"/>
+                                    <img class="wallet-background" src="img/back-300dpi-ripple.jpg" />
                                 </div>
 
                                 <div class="row">
@@ -189,7 +211,8 @@
                     <h4 class="ripple-text-blue">Next step is to fund your new address</h4>
                     <div class="row">
                         <div class="col s12">
-                            <p>To fund a new address, you must send enough XRP to meet the reserve requirement. Once created,
+                            <p>To fund a new address, you must send enough XRP to meet the reserve requirement. Once
+                                created,
                                 an account exists in the XRP Ledger's data tree forever.</p>
                         </div>
                     </div>
@@ -219,7 +242,8 @@
                         <h5 class="center">Base Reserve</h5>
 
                         <p class="light">The
-                            <strong>Base Reserve</strong> is a minimum amount of XRP that is required for every address in the ledger.
+                            <strong>Base Reserve</strong> is a minimum amount of XRP that is required for every address
+                            in the ledger.
                             Currently, this is
                             <strong>20 XRP</strong> (20000000 drops).</p>
                     </div>
@@ -233,7 +257,8 @@
                         <h5 class="center">Owner Reserve</h5>
 
                         <p class="light">The
-                            <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object that the address
+                            <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object
+                            that the address
                             owns in the ledger. Currently, this is
                             <strong>5 XRP</strong> (5000000 drops) per item.</p>
                     </div>
@@ -246,10 +271,14 @@
                         </h2>
                         <h5 class="center">Going Below the Reserve Requirement</h5>
 
-                        <p class="light">When an address holds less XRP than its current reserve requirement, it cannot send new transactions
-                            that would transfer XRP to others, or increase its own reserve. Even so, the address continues
-                            to exist in the ledger and can send other transactions as long as it has enough XRP to pay the
-                            transaction cost. The address can become able to send all types of transactions again if it receives
+                        <p class="light">When an address holds less XRP than its current reserve requirement, it cannot
+                            send new transactions
+                            that would transfer XRP to others, or increase its own reserve. Even so, the address
+                            continues
+                            to exist in the ledger and can send other transactions as long as it has enough XRP to pay
+                            the
+                            transaction cost. The address can become able to send all types of transactions again if it
+                            receives
                             enough XRP to meet its reserve requirement again.</p>
                     </div>
                 </div>
@@ -258,7 +287,8 @@
             <div class="row">
                 <div class="col">
                     <p>To submit transactions, an address must hold
-                        <a class="ripple-text-link" href="https://ripple.com/build/reserves/" target="_blank">a minimum amount of XRP in the shared global ledger</a>. You cannot send this XRP to other addresses.
+                        <a class="ripple-text-link" href="https://ripple.com/build/reserves/" target="_blank">a minimum
+                            amount of XRP in the shared global ledger</a>. You cannot send this XRP to other addresses.
                         To fund a new address, you must send enough XRP to meet the reserve requirement.
                     </p>
                 </div>
@@ -272,40 +302,48 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">About</h5>
-                    <p class="grey-text text-lighten-4">The goal of this tool is to democratize Ripple XRP cold wallets. This project is not affiliated to
-                        <a class="black-text" href="https://ripple.com" target="_blank">Ripple</a>.
+                    <p class="">The goal of this tool is to democratize Ripple XRP cold wallets. This project is not
+                        affiliated to
+                        <a class="ripple-text-gray" href="https://ripple.com" target="_blank">Ripple</a>.
                     </p>
                 </div>
                 <div class="col l3 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
                         <li>
-                            <a class="white-text" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank">Project's Github</a>
+                            <a class="white-text" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank">Project's
+                                Github</a>
                         </li>
                         <li>
                             <a class="white-text" href="https://ripple.com" target="_blank">Ripple</a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://ripple.com/build/" target="_blank">Ripple Developer Center</a>
+                            <a class="white-text" href="https://ripple.com/build/" target="_blank">Ripple Developer
+                                Center</a>
                         </li>
                     </ul>
                 </div>
+                <div class="col l3 s12">
+                    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                    <div class="coinmarketcap-currency-widget" data-currencyid="52" data-base="USD" data-secondary="BTC"
+                        data-ticker="false" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD"
+                        data-statsticker="false"></div>
+                </div>
             </div>
-
-
 
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Disclaimer</h5>
-                    <p class="grey-text text-lighten-4">Use at your own risk. Not responsible if anything goes wrong. Do your due diligence, you can review
-                        the code on GitHub.</p>
+                    <p class="grey-text text-lighten-4">Use at your own risk. Not responsible if anything goes wrong.
+                        Do your due diligence, you can review the
+                        code on GitHub.</p>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
                 Made by
-                <a class="black-text" href="https://github.com/lgcarrier" target="_blank">lgcarrier</a>
+                <a class="ripple-text-gray" href="https://github.com/lgcarrier" target="_blank">Louis-Guillaume Carrier-Bédard</a>
             </div>
         </div>
     </footer>
@@ -330,6 +368,19 @@
 
     <!-- init custo -->
     <script src="js/init.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4094498-8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-4094498-8');
+    </script>
 
 </body>
 
