@@ -6,9 +6,12 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>XRP Paper Wallet | Ripple</title>
+    <title>XRP Paper Wallet | XRPL - XRP Ledger</title>
 
-    <link rel="stylesheet" href="vendor/materialize/0.100.2/css/materialize.min.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="apple-touch-icon" sizes="57x57" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-57x57.png">
@@ -20,7 +23,8 @@
     <link rel="apple-touch-icon" sizes="144x144" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="vendor/ripple/XRP-Symbol-Kit/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="vendor/ripple/XRP-Symbol-Kit/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-16x16.png">
@@ -35,8 +39,8 @@
         <nav class="ripple-text-blue" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="brand-logo">
-                        <img src="vendor/ripple/XRP-Symbol-Kit/text-mark/xrp-text-mark-white.svg" />Ripple XRP Paper Wallet
-                        <span class="tag-beta red-text">beta</span> 
+                    <img src="vendor/ripple/XRP-Symbol-Kit/text-mark/xrp-text-mark-white.svg" />XRP Paper Wallet
+                    <span class="tag-beta red-text">beta</span>
                     <!-- <img src="vendor/ripple_logos/ripple_logo_small.png" />XRP Paper Wallet
                     <span class="red-text">beta</span> -->
                 </a>
@@ -48,7 +52,7 @@
             <div class="container">
                 <br>
                 <br>
-                <h1 class="header">Ripple XRP Paper Wallet</h1>
+                <h1 class="header">XRP Paper Wallet</h1>
                 <div class="row">
                     <h5 class="header col s12 light">Secure and easy way to generate a cold wallet.</h5>
                 </div>
@@ -94,7 +98,8 @@
                             should be offline.</p>
 
                         <div class="row center">
-                            <a href="#paper-wallet" id="generate-paper-wallet" class="btn-large waves-effect waves-light ripple-blue">Generate
+                            <a href="#paper-wallet" id="generate-paper-wallet"
+                                class="btn-large waves-effect waves-light ripple-blue">Generate
                                 a paper wallet</a>
                         </div>
                     </div>
@@ -125,7 +130,8 @@
                             online to service instant withdrawal requests.</p>
 
                         <div class="row center">
-                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank" class="btn-large waves-effect waves-light ripple-white-btn">Buy
+                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank"
+                                class="btn-large waves-effect waves-light ripple-white-btn">Buy
                                 XRP</a>
                         </div>
 
@@ -139,7 +145,8 @@
                         <a class="ripple-text-link" href="https://xrpl.org/issuing-and-operational-addresses.html"
                             target="_blank">use multiple XRP Ledger addresses</a> to minimize the risk associated with
                         a compromised secret key.
-                        The hot/warm/cold model is intended to balance security and convenience.</p>
+                        The hot/warm/cold model is intended to balance security and convenience.
+                    </p>
                 </div>
             </div>
         </div>
@@ -182,7 +189,8 @@
 
                                 <div class="row">
                                     <div class="col s12 center">
-                                        <a href="javascript:printWallet('wallet-front');" class="btn-large waves-effect waves-light ripple-blue">
+                                        <a href="javascript:printWallet('wallet-front');"
+                                            class="btn-large waves-effect waves-light ripple-blue">
                                             <i class="fas fa-print"></i>&nbsp;Print Front</a>
                                     </div>
                                 </div>
@@ -193,7 +201,8 @@
 
                                 <div class="row">
                                     <div class="col s12 center">
-                                        <a href="javascript:printWallet('wallet-back');" class="btn-large waves-effect waves-light ripple-blue">
+                                        <a href="javascript:printWallet('wallet-back');"
+                                            class="btn-large waves-effect waves-light ripple-blue">
                                             <i class="fas fa-print"></i>&nbsp;Print Back</a>
                                     </div>
                                 </div>
@@ -245,7 +254,8 @@
                             <strong>Base Reserve</strong> is a minimum amount of XRP that is required for every address
                             in the ledger.
                             Currently, this is
-                            <strong>20 XRP</strong> (20000000 drops).</p>
+                            <strong>10 XRP</strong> (10000000 drops).
+                        </p>
                     </div>
                 </div>
 
@@ -260,7 +270,8 @@
                             <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object
                             that the address
                             owns in the ledger. Currently, this is
-                            <strong>5 XRP</strong> (5000000 drops) per item.</p>
+                            <strong>2 XRP</strong> (2000000 drops) per item.
+                        </p>
                     </div>
                 </div>
 
@@ -302,25 +313,30 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">About</h5>
-                    <p class="">The goal of this tool is to democratize <a class="ripple-text-gray" href="https://xrpl.org/" target="_blank">XRP</a> cold wallets. This project is not
-                        affiliated to
-                        <a class="ripple-text-gray" href="https://ripple.com" target="_blank">Ripple</a>.
+                    <p class="">The goal of this tool is to democratize <a class="ripple-text-gray"
+                            href="https://xrpl.org/" target="_blank">XRP</a> cold wallets.<br />
+                        This project is not
+                        affiliated to <a class="ripple-text-gray" href="https://ripple.com" target="_blank">Ripple</a>
+                        or <a class="ripple-text-gray" href="https://xrpl.org/" target="_blank">XRPL</a>.
                     </p>
                 </div>
                 <div class="col l3 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
                         <li>
-                            <a class="white-text" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank">XRP Paper Wallet GitHub</a>
+                            <a class="white-text" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank">XRP
+                                Paper Wallet GitHub</a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib (RippleAPI) GitHub</a>
+                            <a class="white-text" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib
+                                (RippleAPI) GitHub</a>
                         </li>
                         <li>
                             <a class="white-text" href="https://xrpl.org/" target="_blank">XRP Ledger Project</a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://github.com/xrpsymbol/xrpsymbol.github.io" target="_blank">XRP Symbol</a>
+                            <a class="white-text" href="https://github.com/xrpsymbol/xrpsymbol.github.io"
+                                target="_blank">XRP Symbol</a>
                         </li>
                         <li>
                             <a class="white-text" href="https://ripplex.io/" target="_blank">RippleX</a>
@@ -331,7 +347,8 @@
                     </ul>
                 </div>
                 <div class="col l3 s12">
-                    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                    <script type="text/javascript"
+                        src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
                     <div class="coinmarketcap-currency-widget" data-currencyid="52" data-base="USD" data-secondary="BTC"
                         data-ticker="false" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD"
                         data-statsticker="false"></div>
@@ -350,30 +367,29 @@
         <div class="footer-copyright">
             <div class="container">
                 Made by
-                <a class="ripple-text-gray" href="https://github.com/lgcarrier" target="_blank">Louis-Guillaume Carrier-Bédard</a>
+                <a class="ripple-text-gray" href="https://github.com/lgcarrier" target="_blank">Louis-Guillaume
+                    Carrier-Bédard</a>
             </div>
         </div>
     </footer>
 
 
-    <!-- Scripts-->
+   <!-- Scripts-->
 
     <!-- Font Awesome -->
     <script defer src="vendor/fontawesome/5.0.2/js/all.js"></script>
 
-    <!-- Ripple API -->
-    <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
-    <script src="https://unpkg.com/ripple-lib@1.9.0/build/ripple-latest-min.js"></script>
+    <!-- XRP Ledger (xrpl.js) -->
+    <script src="https://unpkg.com/xrpl@4.0.0/build/xrpl-latest-min.js"></script>
 
     <!-- UI Materialize -->
     <script type="text/javascript" src="vendor/jquery/3.2.1/jquery-3.2.1.min.js"></script>
     <script src="vendor/materialize/0.100.2/js/materialize.min.js"></script>
 
-
-    <!-- qrcode -->
+    <!-- QR Code -->
     <script defer src="vendor/qrcodejs/qrcode.min.js"></script>
 
-    <!-- init custo -->
+    <!-- Custom Initialization -->
     <script src="js/init.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
