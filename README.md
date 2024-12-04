@@ -9,8 +9,8 @@ Follow the instructions on the page.
 
 ## Credits
 
-### RippleAPI
-https://ripple.com/build/rippleapi/
+### xrpl.js - A JavaScript/TypeScript library for interacting with the XRP Ledger
+https://js.xrpl.org/
 
 ### Materialize - A modern responsive front-end framework based on Material Design
 http://materializecss.com
