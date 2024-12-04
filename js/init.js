@@ -1,9 +1,6 @@
-console.log(ripple);
-var api = new ripple.RippleAPI({
-  server: 'wss://s1.ripple.com/'
-});
+const client = new xrpl.Client('wss://s1.ripple.com/');
 
-printingCSS = new String('<link href="css/printing.css" rel="stylesheet" type="text/css">')
+const printingCSS = '<link href="css/printing.css" rel="stylesheet" type="text/css">';
 
 function printWallet(side) {
   window.frames["print_frame"].document.body.innerHTML = printingCSS + document.getElementById(side).outerHTML;
@@ -14,48 +11,29 @@ function printWallet(side) {
 }
 
 (function ($) {
-
-  /**
-   * config
-   */
-  var config = config || {};
-
-  config.wallets = {
-    'tip': '',
-    'new': ''
-  };
-
-  /**
-   * set current account using an hardcoded
-   */
-  var account = config.wallets.new;
-
-
   /**
    * displayGeneratedAddress
    */
   function displayGeneratedAddress(newAddress) {
-    var generatedAddress = $('<ul></ul>').addClass('collection');
-
-    generatedAddress.append('<li class="collection-item">Address:&nbsp;' + newAddress.address + '</li>')
-    generatedAddress.append('<li class="collection-item">Secret:&nbsp;' + newAddress.secret + '</li>')
-
-    generatedAddress.appendTo('#generated-paper-wallet')
+    const generatedAddress = $('<ul></ul>').addClass('collection');
+    generatedAddress.append('<li class="collection-item">Address:&nbsp;' + newAddress.classicAddress + '</li>');
+    generatedAddress.append('<li class="collection-item">Secret:&nbsp;' + newAddress.seed + '</li>');
+    generatedAddress.appendTo('#generated-paper-wallet');
   }
 
   /**
    * generateQrCodes
    */
   function generateQrCodes(newAddress) {
-    var qrcodeAddress = document.getElementById('qrcode-address');
-    var qrcodeSecret = document.getElementById('qrcode-secret');
+    const qrcodeAddress = document.getElementById('qrcode-address');
+    const qrcodeSecret = document.getElementById('qrcode-secret');
 
     // clear previously created qrcodes
     qrcodeAddress.innerHTML = '';
     qrcodeSecret.innerHTML = '';
 
-    var qrcode = new QRCode(qrcodeAddress, {
-      text: newAddress.address,
+    new QRCode(qrcodeAddress, {
+      text: newAddress.classicAddress,
       width: 100,
       height: 100,
       colorDark: '#000000',
@@ -63,8 +41,8 @@ function printWallet(side) {
       correctLevel: QRCode.CorrectLevel.H
     });
 
-    var qrcode = new QRCode(qrcodeSecret, {
-      text: newAddress.secret,
+    new QRCode(qrcodeSecret, {
+      text: newAddress.seed,
       width: 125,
       height: 125,
       colorDark: '#000000',
@@ -77,8 +55,8 @@ function printWallet(side) {
    * addAddressPublic
    */
   function addAddressPublic(address) {
-    var cleartextAddress1 = document.getElementById('cleartext-address-1');
-    var cleartextAddress2 = document.getElementById('cleartext-address-2');
+    const cleartextAddress1 = document.getElementById('cleartext-address-1');
+    const cleartextAddress2 = document.getElementById('cleartext-address-2');
     cleartextAddress1.innerHTML = address;
     cleartextAddress2.innerHTML = address;
   }
@@ -87,8 +65,8 @@ function printWallet(side) {
    * addAddressSecret
    */
   function addAddressSecret(secret) {
-    var cleartextSecret1 = document.getElementById('cleartext-secret-1');
-    var cleartextSecret2 = document.getElementById('cleartext-secret-2');
+    const cleartextSecret1 = document.getElementById('cleartext-secret-1');
+    const cleartextSecret2 = document.getElementById('cleartext-secret-2');
     cleartextSecret1.innerHTML = secret;
     cleartextSecret2.innerHTML = secret;
   }
@@ -98,8 +76,8 @@ function printWallet(side) {
    */
   function displayFrontPaperWallet(newAddress) {
     generateQrCodes(newAddress);
-    addAddressPublic(newAddress.address);
-    addAddressSecret(newAddress.secret);
+    addAddressPublic(newAddress.classicAddress);
+    addAddressSecret(newAddress.seed);
   }
 
   /**
@@ -108,31 +86,28 @@ function printWallet(side) {
   function displayBackPaperWallet() {}
 
   /**
-   * displayBackPaperWallet
+   * displayPaperWallet
    */
   function displayPaperWallet(newAddress) {
     displayFrontPaperWallet(newAddress);
     displayBackPaperWallet();
     $('#paper-wallet').show();
-    $('html,body').animate({scrollTop: $('#paper-wallet').offset().top-50},'slow');
+    $('html,body').animate({scrollTop: $('#paper-wallet').offset().top - 50}, 'slow');
   }
 
   /**
    * Generate a paper wallet
    */
-  function generatePaperWallet() {
-    api.connect().then(() => {
-      // console.log('generateAddress');
-      return api.generateAddress();
-    }).then(newAddress => {
-      // console.log(newAddress);
-      displayPaperWallet(newAddress);
-      // console.log('generateAddress done');
-    }).then(() => {
-      // return api.disconnect();
-    }).then(() => {
-      // console.log('done and disconnected.');
-    }).catch(console.error);
+  async function generatePaperWallet() {
+    try {
+      await client.connect();
+      const wallet = xrpl.Wallet.generate();
+      displayPaperWallet(wallet);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      await client.disconnect();
+    }
   }
 
   function displayAccountStatus(status) {
@@ -143,49 +118,52 @@ function printWallet(side) {
   /**
    * validateAccountStatus
    */
-  function validateAccountStatus(account) {
-    api.connect().then(() => {
-      return api.getBalances(account);
-    }).then(balances => {}).then(() => {
-      displayAccountStatus('Account validated');
-    }).catch((error) => {
-      if (error.name == 'RippledError' && error.message == 'actNotFound') {
+  async function validateAccountStatus(account) {
+    try {
+      await client.connect();
+      const response = await client.request({
+        command: 'account_info',
+        account: account
+      });
+      if (response.result) {
+        displayAccountStatus('Account validated');
+      }
+    } catch (error) {
+      if (error.data && error.data.error === 'actNotFound') {
         displayAccountStatus('Account not validated');
       }
-    });
+    } finally {
+      await client.disconnect();
+    }
   }
 
   /**
    * displayAccountBalances
    */
   function displayAccountBalances(balances) {
-    var mybalances = $('<ul></ul>').addClass('collection');
-    // mybalances.append('<li class="collection-header"><h4>balances</h4></li>');
-
-    _.each(balances, function (balance) {
-      mybalances.append('<li class="collection-item">' + balance.currency + ':&nbsp;' + balance.value + '</li>')
+    const mybalances = $('<ul></ul>').addClass('collection');
+    balances.forEach(balance => {
+      mybalances.append('<li class="collection-item">' + balance.currency + ':&nbsp;' + balance.value + '</li>');
     });
-
     mybalances.appendTo('#AccountBalances');
   }
 
   /**
    * getAccountBalances
    */
-  function getAccountBalances(account) {
-    api.connect().then(() => {
-      console.log('getting balances for', account);
-      return api.getBalances(account);
-    }).then(balances => {
-      console.log(balances);
-      displayAccountBalances(balances);
-
-      console.log('getBalances done');
-    }).then(() => {
-      // return api.disconnect();
-    }).then(() => {
-      // console.log('done and disconnected.');
-    }).catch(console.error);
+  async function getAccountBalances(account) {
+    try {
+      await client.connect();
+      const response = await client.request({
+        command: 'account_lines',
+        account: account
+      });
+      displayAccountBalances(response.result.lines);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      await client.disconnect();
+    }
   }
 
   /**
@@ -197,50 +175,13 @@ function printWallet(side) {
   }
 
   function bindEvents() {
-    $('#generate-paper-wallet').click(function () {
+    $('#generate-paper-wallet').click(() => {
       generatePaperWallet();
     });
   }
 
-
-
   $(function () {
     initTheme();
     bindEvents();
-    // getAccountBalances(account);
-
-    // api.connect().then(function () {
-    //   return api.getServerInfo();
-    // }).then(function (server_info) {
-    //   document.body.innerHTML += "<p>Connected to rippled server!</p>" +
-    //     "      <table>" +
-    //     "        <tr><th>Version</th>" +
-    //     "          <td>" + server_info.buildVersion + "</td></tr>" +
-    //     "        <tr><th>Ledgers available</th>" +
-    //     "          <td>" + server_info.completeLedgers + "</td></tr>" +
-    //     "        <tr><th>hostID</th>" +
-    //     "          <td>" + server_info.hostID + "</td></tr>" +
-    //     "        <tr><th>Most Recent Validated Ledger Seq.</th>" +
-    //     "          <td>" + server_info.validatedLedger.ledgerVersion + "</td></tr>" +
-    //     "        <tr><th>Most Recent Validated Ledger Hash</th>" +
-    //     "          <td>" + server_info.validatedLedger.hash + "</td></tr>" +
-    //     "        <tr><th>Seconds since last ledger validated</th>" +
-    //     "          <td>" + server_info.validatedLedger.age + "</td></tr>" +
-    //     "      </table>";
-    // });
-
-    // api.connect().then(() => {
-    //   console.log('getting account info for', account);
-    //   return api.getAccountInfo(account);
-    // }).then(info => {
-    //   console.log(info);
-    //   document.body.innerHTML += info.xrpBalance;
-    //   console.log('getAccountInfo done');
-    // }).then(() => {
-    //   // return api.disconnect();
-    // }).then(() => {
-    //   // console.log('done and disconnected.');
-    // }).catch(console.error);
-
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
+  });
+})(jQuery);

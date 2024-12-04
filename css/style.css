@@ -8,203 +8,208 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
-  color: #444D55;
-}
-
-.brand-logo img {
-  margin-right: 10px;
-}
-
-.brand-logo span.tag-beta.red-text {
-  position: absolute;
-  top: -10px;
-  font-size: 12px;
-  right: 20px;
-}
-
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #26a69a;
-}
-
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255, 255, 255, .9);
-}
-
-.parallax-container .section {
-  width: 100%;
-}
-
-@media only screen and (max-width: 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .brand-logo img {
-    margin-left: 30px;
-  }
-
-  #index-banner .section {
-    top: 0;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
-}
-
-.ripple-text-blue {
-  color: #27a2db;
-}
-
-.ripple-text-link {
-  color: #27a2db !important;
-}
-
-.ripple-text-link:hover {
-  color: #43bded !important;
-}
-
-.ripple-blue {
-  background-color: #27a2db !important;
-}
-
-.btn-large.ripple-blue:hover {
-  background-color: #43bded !important;
-}
-
-.ripple-white-btn {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(204, 204, 204, 0.1) !important;
-  border: 1px solid #ccc;
-}
-
-.ripple-white-btn:hover {
-  background: #fff;
-  background-color: rgba(204, 204, 204, 0.3) !important;
-  border: 1px solid #ccc;
-}
-
-.wallet-front {
-  position: relative;
-}
-
-.wallet-front #qrcode-address {
-  position: absolute;
-  top: 118px;
-  left: 40px;
-}
-
-.wallet-front #cleartext-address-1 {
-  position: absolute;
-  top: 50px;
-  left: 45px;
-  font-weight: bold;
-  font-size: 12px;
-  transform: rotate(180deg);
-  color: black;
-}
-
-.wallet-front #cleartext-address-2 {
-  position: absolute;
-  top: 260px;
-  left: 45px;
-  font-weight: bold;
-  font-size: 12px;
-  color: black;
-}
-
-.wallet-front #qrcode-secret {
-  position: absolute;
-  top: 102px;
-  left: 817px;
-}
-
-.wallet-front #cleartext-secret-1 {
-  position: absolute;
-  top: 70px;
-  left: 800px;
-  font-weight: bold;
-  font-size: 9px;
-  transform: rotate(180deg);
-  color: black;
-}
-
-.wallet-front #cleartext-secret-2 {
-  position: absolute;
-  top: 240px;
-  left: 800px;
-  font-weight: bold;
-  font-size: 9px;
-  color: black;
-}
-
-.wallet-background, .wallet-front, .wallet-back {
-  width: 1000px;
-}
-
-body,
-nav {
-  color: #fff;
-  background: #222;
-}
-
-.section p {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 17px !important;
-}
-
-.brand-logo img {
-  width: 150px;
-  position: relative;
-  top: 10px;
-}
-
-nav .brand-logo {
-  font-size: 1.5rem;
-  width: 450px;
-}
-
-td,
-th {
-  border: 1px solid black;
-  padding: 5px;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-.coinmarketcap-currency-widget > div {
-  background: #222;
-}
-
-.coinmarketcap-currency-widget > div span {
-  color: #ffffff !important;
-}
-
-.ripple-text-gray {
-  color: #333 !important;
-}
+ nav ul a,
+ nav .brand-logo {
+   color: #444D55;
+ }
+ 
+ .brand-logo img {
+   margin-right: 10px;
+ }
+ 
+ .brand-logo span.tag-beta.red-text {
+   position: absolute;
+   top: -10px;
+   font-size: 12px;
+   right: 20px;
+ }
+ 
+ p {
+   line-height: 2rem;
+ }
+ 
+ .button-collapse {
+   color: #26a69a;
+ }
+ 
+ .parallax-container {
+   min-height: 380px;
+   line-height: 0;
+   height: auto;
+   color: rgba(255, 255, 255, .9);
+ }
+ 
+ .parallax-container .section {
+   width: 100%;
+ }
+ 
+ @media only screen and (max-width: 992px) {
+   .parallax-container .section {
+     position: absolute;
+     top: 40%;
+   }
+   #index-banner .section {
+     top: 10%;
+   }
+ }
+ 
+ @media only screen and (max-width: 600px) {
+   .brand-logo img {
+     margin-left: 30px;
+   }
+ 
+   #index-banner .section {
+     top: 0;
+   }
+ }
+ 
+ .parallax-container .parallax img {
+   opacity: 0.8;
+   filter: alpha(opacity=80);
+ }
+ 
+ .icon-block {
+   padding: 0 15px;
+ }
+ 
+ .icon-block .material-icons {
+   font-size: inherit;
+ }
+ 
+ footer.page-footer {
+   margin: 0;
+ }
+ 
+ .ripple-text-blue {
+   color: #27a2db;
+ }
+ 
+ .ripple-text-link {
+   color: #27a2db !important;
+ }
+ 
+ .ripple-text-link:hover {
+   color: #43bded !important;
+ }
+ 
+ .ripple-blue {
+   background-color: #27a2db !important;
+ }
+ 
+ .btn-large.ripple-blue:hover {
+   background-color: #43bded !important;
+ }
+ 
+ .ripple-white-btn {
+   color: rgba(255, 255, 255, 0.8);
+   background-color: rgba(204, 204, 204, 0.1) !important;
+   border: 1px solid #ccc;
+ }
+ 
+ .ripple-white-btn:hover {
+   background: #fff;
+   background-color: rgba(204, 204, 204, 0.3) !important;
+   border: 1px solid #ccc;
+ }
+ 
+ .wallet-front {
+   position: relative;
+ }
+ 
+ .wallet-front #qrcode-address {
+   position: absolute;
+   top: 118px;
+   left: 40px;
+ }
+ 
+ .wallet-front #cleartext-address-1 {
+   position: absolute;
+   top: 50px;
+   left: 45px;
+   font-weight: bold;
+   font-size: 12px;
+   transform: rotate(180deg);
+   color: black;
+ }
+ 
+ .wallet-front #cleartext-address-2 {
+   position: absolute;
+   top: 260px;
+   left: 45px;
+   font-weight: bold;
+   font-size: 12px;
+   color: black;
+ }
+ 
+ .wallet-front #qrcode-secret {
+   position: absolute;
+   top: 102px;
+   left: 817px;
+ }
+ 
+ .wallet-front #cleartext-secret-1 {
+   position: absolute;
+   top: 70px;
+   left: 800px;
+   font-weight: bold;
+   font-size: 9px;
+   transform: rotate(180deg);
+   color: black;
+ }
+ 
+ .wallet-front #cleartext-secret-2 {
+   position: absolute;
+   top: 240px;
+   left: 800px;
+   font-weight: bold;
+   font-size: 9px;
+   color: black;
+ }
+ 
+ .wallet-background, .wallet-front, .wallet-back {
+   width: 1000px;
+ }
+ 
+ body,
+ nav {
+   color: #fff;
+   background: #222;
+ }
+ 
+ .section p {
+   color: rgba(255, 255, 255, 0.6);
+   font-size: 17px !important;
+ }
+ 
+ .brand-logo img {
+   width: 150px;
+   position: relative;
+   top: 10px;
+ }
+ 
+ nav .brand-logo {
+   font-size: 1.5rem;
+   width: 450px;
+ }
+ 
+ td,
+ th {
+   border: 1px solid black;
+   padding: 5px;
+ }
+ 
+ table {
+   border-collapse: collapse;
+ }
+ 
+ .coinmarketcap-currency-widget > div {
+   background: #222;
+ }
+ 
+ .coinmarketcap-currency-widget > div span {
+   color: #ffffff !important;
+ }
+ 
+ .ripple-text-gray {
+   color: #333 !important;
+ }
