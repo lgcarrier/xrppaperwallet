@@ -176,6 +176,9 @@ function printWallet(side) {
 
   function bindEvents() {
     $('#generate-paper-wallet').click(() => {
+      if (!confirm('This tool is provided as-is without any warranties. Use it at your own risk. The creators are not liable for any losses or damages. This is not legal advice. Please review the code on GitHub and conduct your own due diligence before use.')) {
+        return;
+      }
       generatePaperWallet();
     });
   }
