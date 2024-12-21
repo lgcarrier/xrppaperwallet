@@ -150,7 +150,7 @@
  .wallet-front #cleartext-secret-1 {
    position: absolute;
    top: 70px;
-   left: 800px;
+   left: 790px;
    font-weight: bold;
    font-size: 9px;
    transform: rotate(180deg);
@@ -160,7 +160,7 @@
  .wallet-front #cleartext-secret-2 {
    position: absolute;
    top: 240px;
-   left: 800px;
+   left: 790px;
    font-weight: bold;
    font-size: 9px;
    color: black;
