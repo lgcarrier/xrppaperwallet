@@ -23,6 +23,10 @@
    font-size: 12px;
    right: 20px;
  }
+
+#index-banner h1.header {
+  font-size: 3.6rem;
+}
  
  p {
    line-height: 2rem;
