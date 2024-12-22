@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>XRP Paper Wallet | XRPL - XRP Ledger</title>
+    <title>XRP Paper Wallet Generator: Create Secure Cold Storage | XRPL Cold Wallet Tool</title>
 
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -32,6 +32,16 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="Generate secure XRP paper wallets for cold storage. Free, open-source tool for creating offline XRP Ledger addresses using the hot/warm/cold wallet model.">
+    <meta name="keywords" content="XRP, XRPL, paper wallet, cold storage, cryptocurrency wallet, XRP Ledger, crypto security, offline wallet">
+    <meta name="author" content="Louis-Guillaume Carrier-Bédard">
+    <meta property="og:title" content="XRP Paper Wallet Generator | XRPL - XRP Ledger">
+    <meta property="og:description" content="Create secure offline XRP paper wallets for cold storage using this free open-source tool.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="XRP Paper Wallet Generator">
+    <meta name="twitter:description" content="Generate secure offline XRP paper wallets for cold storage using this free tool.">
 </head>
 
 <body>
@@ -85,11 +95,11 @@
                         <h2 class="center blue-text">
                             <i class="fas fa-thermometer-empty"></i>
                         </h2>
-                        <h5 class="center">Cold wallet</h5>
+                        <h5 class="center">XRP Cold Storage Wallet</h5>
 
-                        <p class="light">Securely hold the majority of XRP and funds. To provide optimal security, this
-                            account's secret key
-                            should be offline.</p>
+                        <p class="light">Create a secure offline XRP paper wallet to protect your cryptocurrency investments. 
+                            A cold storage wallet keeps your XRPL private keys completely offline, providing maximum security 
+                            for long-term XRP holdings and protecting against online threats.</p>
 
                         <div class="row center">
                             <a href="#paper-wallet" id="generate-paper-wallet"
@@ -104,11 +114,11 @@
                         <h2 class="center yellow-text">
                             <i class="fas fa-thermometer-half"></i>
                         </h2>
-                        <h5 class="center">Warm wallet</h5>
+                        <h5 class="center">Warm XRP Wallet</h5>
 
-                        <p class="light">Provide an additional layer of security between the cold and hot wallets.
-                            Unlike a hot wallet, the
-                            secret key of a warm wallet does not need to be online.</p>
+                        <p class="light">A warm wallet provides an essential security layer between cold storage and hot wallets 
+                            for your XRP holdings. Unlike hot wallets, warm wallet private keys can be stored offline 
+                            for enhanced XRPL security while maintaining reasonable accessibility.</p>
 
                         <div class="rowcenter">
                             <a href="https://xaman.app/" target="_blank"
@@ -122,11 +132,12 @@
                         <h2 class="center red-text">
                             <i class="fas fa-thermometer-full"></i>
                         </h2>
-                        <h5 class="center">Hot wallet</h5>
+                        <h5 class="center">XRP Hot Wallet</h5>
 
-                        <p class="light">Conduct the day-to-day business of managing XRP withdrawals and deposits. Hot
-                            wallets need to be
-                            online to service instant withdrawal requests.</p>
+                        <p class="light">A hot wallet is essential for managing daily XRP transactions on the XRPL network. 
+                            While always connected online for instant withdrawals and deposits, hot wallets provide convenient 
+                            trading but require careful security considerations. Ideal for active XRP trading and frequent 
+                            transactions on exchanges.</p>
 
                         <div class="row center">
                             <a href="https://web.newton.co/r/ZPYBU6" target="_blank"
@@ -140,11 +151,12 @@
 
             <div class="row">
                 <div class="col">
-                    <p>You can replicate what financial institutions do and
-                        <a class="ripple-text-link" href="https://xrpl.org/issuing-and-operational-addresses.html"
-                            target="_blank">use multiple XRP Ledger addresses</a> to minimize the risk associated with
-                        a compromised secret key.
-                        The hot/warm/cold model is intended to balance security and convenience.
+                    <p>Learn how to secure your XRP like professional financial institutions by implementing the 
+                        <a class="ripple-text-link" href="https://xrpl.org/issuing-and-operational-addresses.html" 
+                            target="_blank" rel="noopener">XRPL multi-address security strategy</a>.
+                        This proven hot/warm/cold wallet model provides optimal protection for your XRP holdings while 
+                        maintaining efficient access. Used by major cryptocurrency institutions, this approach helps protect 
+                        against security breaches by segregating funds across multiple secure XRP Ledger addresses.
                     </p>
                 </div>
             </div>
@@ -159,12 +171,12 @@
             <div class="row">
                 <div class="col s12 center">
                     <h3>
-                        This is your new XRP paper wallet
+                        Generate Your Secure XRP Paper Wallet
                     </h3>
                     <h4 class="ripple-text-blue">
-                        <strong>do not share</strong>... it's
-                        <strong>EXTREMELY</strong> precious&nbsp;
-                        <i class="fas fa-arrow-down"></i>
+                        <strong>Keep Your XRP Private Keys Secure</strong> - 
+                        This Contains Your <strong>CONFIDENTIAL</strong> XRPL Credentials&nbsp;
+                        <i class="fas fa-arrow-down" aria-label="View wallet details below"></i>
                     </h4>
                     <div class="row">
                         <div class="col s12 center">
@@ -190,7 +202,7 @@
                                     <div class="col s12 center">
                                         <a href="javascript:printWallet('wallet-front');"
                                             class="btn-large waves-effect waves-light ripple-blue">
-                                            <i class="fas fa-print"></i>&nbsp;Print Front</a>
+                                            <i class="fas fa-print" aria-label="Print front side of XRP paper wallet"></i>&nbsp;Print Front Side of XRP Paper Wallet</a>
                                     </div>
                                 </div>
 
@@ -202,7 +214,7 @@
                                     <div class="col s12 center">
                                         <a href="javascript:printWallet('wallet-back');"
                                             class="btn-large waves-effect waves-light ripple-blue">
-                                            <i class="fas fa-print"></i>&nbsp;Print Back</a>
+                                            <i class="fas fa-print" aria-label="Print back side of XRP paper wallet"></i>&nbsp;Print Back Side of XRP Paper Wallet</a>
                                     </div>
                                 </div>
 
@@ -215,13 +227,13 @@
 
             <div class="row">
                 <div class="col s12 center">
-                    <h3>This account is not activated yet...</h3>
-                    <h4 class="ripple-text-blue">Next step is to fund your new address</h4>
+                    <h3>Activate Your New XRP Ledger Account</h3>
+                    <h4 class="ripple-text-blue">Fund Your XRP Wallet Address</h4>
                     <div class="row">
                         <div class="col s12">
-                            <p>To fund a new address, you must send enough XRP to meet the reserve requirement. Once
-                                created,
-                                an account exists in the XRP Ledger's data tree forever.</p>
+                            <p>To activate your XRPL wallet address, send the minimum required XRP (currently 1 XRP) to meet the network's reserve requirement. 
+                               This creates a permanent account on the XRP Ledger network, securing your position in the 
+                               decentralized financial system. Your XRP address will be maintained in the XRPL's distributed database permanently.</p>
                         </div>
                     </div>
                 </div>
@@ -253,7 +265,7 @@
                             <strong>Base Reserve</strong> is a minimum amount of XRP that is required for every address
                             in the ledger.
                             Currently, this is
-                            <strong>10 XRP</strong> (10000000 drops).
+                            <strong>1 XRP</strong> (1000000 drops).
                         </p>
                     </div>
                 </div>
@@ -269,7 +281,7 @@
                             <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object
                             that the address
                             owns in the ledger. Currently, this is
-                            <strong>2 XRP</strong> (2000000 drops) per item.
+                            <strong>0.2 XRP</strong> (200000 drops) per item.
                         </p>
                     </div>
                 </div>
