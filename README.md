@@ -72,6 +72,8 @@ does not connect to the ledger to check funding, balances, or current reserves.
 
 The original wallet artwork is preserved. Credential text and QR codes are
 rendered over it; the QR codes are SVG with a four-module white quiet zone.
+The preparation banner uses a locally bundled, generated WebP image. It is
+decorative and does not appear on the printed wallet.
 
 ## Security changes
 

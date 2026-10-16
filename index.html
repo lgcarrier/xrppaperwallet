@@ -27,16 +27,20 @@
         <a class="source-link" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
     </header>
 
-    <main class="page-width">
+    <main>
         <section class="offline-section" aria-labelledby="offline-heading">
-            <p class="eyebrow">Start offline</p>
-            <h2 id="offline-heading">Disconnect before you generate.</h2>
-            <p class="lead">The safest way to use this tool is to download it, disconnect from the internet, and open it locally. Use an air-gapped computer if possible.</p>
-            <div class="actions offline-actions">
-                <a id="download-zip" class="button button-primary" href="https://github.com/lgcarrier/xrppaperwallet/archive/refs/heads/master.zip">Download ZIP for offline use <span aria-hidden="true">↓</span></a>
-                <a id="online-generator-link" class="button button-secondary" href="#generator">Use online generator <span aria-hidden="true">→</span></a>
+            <div class="offline-hero">
+                <div class="page-width">
+                    <p class="eyebrow">Start offline</p>
+                    <h2 id="offline-heading">Disconnect before you generate.</h2>
+                    <p class="lead">The safest way to use this tool is to download it, disconnect from the internet, and open it locally. Use an air-gapped computer if possible.</p>
+                    <div class="actions offline-actions">
+                        <a id="download-zip" class="button button-primary" href="https://github.com/lgcarrier/xrppaperwallet/archive/refs/heads/master.zip">Download ZIP for offline use <span aria-hidden="true">↓</span></a>
+                        <a id="online-generator-link" class="button button-secondary" href="#generator">Use online generator <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
             </div>
-            <ol class="offline-steps" aria-label="Offline preparation and backup steps">
+            <ol class="offline-steps page-width" aria-label="Offline preparation and backup steps">
                 <li><span>01</span><div><strong>Download &amp; extract</strong><small>Keep the whole folder together.</small></div></li>
                 <li><span>02</span><div><strong>Disconnect</strong><small>Turn off Wi-Fi and unplug Ethernet.</small></div></li>
                 <li><span>03</span><div><strong>Open index.html</strong><small>Use a clean browser without extensions.</small></div></li>
@@ -44,7 +48,7 @@
             </ol>
         </section>
 
-        <section id="generator" class="generator-section" aria-labelledby="generator-heading">
+        <section id="generator" class="generator-section page-width" aria-labelledby="generator-heading">
             <div class="section-heading">
                 <p class="eyebrow">Your wallet</p>
                 <h2 id="generator-heading">Generate a paper wallet</h2>
@@ -60,11 +64,11 @@
             <noscript><p class="error-message">JavaScript must be enabled to generate a wallet locally. No server or internet connection is required.</p></noscript>
         </section>
 
-        <div id="wallet-result"></div>
-        <p id="print-status" class="status" role="status"></p>
-        <p id="print-error" class="error-message" role="alert" hidden></p>
+        <div id="wallet-result" class="page-width"></div>
+        <p id="print-status" class="status page-width" role="status"></p>
+        <p id="print-error" class="error-message page-width" role="alert" hidden></p>
 
-        <section class="guidance-section" aria-labelledby="funding-heading">
+        <section class="guidance-section page-width" aria-labelledby="funding-heading">
             <div class="section-heading">
                 <p class="eyebrow">Before you fund it</p>
                 <h2 id="funding-heading">Back up first. Test with a small amount.</h2>
@@ -90,7 +94,7 @@
             </div>
         </section>
 
-        <section class="storage-section" aria-labelledby="storage-heading">
+        <section class="storage-section page-width" aria-labelledby="storage-heading">
             <h2 id="storage-heading">Separate storage from everyday use</h2>
             <p>A cold wallet keeps its signing secret offline. A warm wallet is accessed occasionally with controlled signing. A hot wallet is available on a connected device for frequent transactions. Separate accounts can limit the funds exposed if one secret is compromised.</p>
             <p>A paper backup helps only if the computer, generation process, printer, and physical storage are trustworthy.</p>

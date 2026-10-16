@@ -8,7 +8,7 @@
   main > :not(#wallet-result),
   #paper-wallet > :not(.print-preview),
   .print-preview > :not(.wallet-sheet) { display: none !important; }
-  main.page-width, #wallet-result, #paper-wallet, .print-preview {
+  main, #wallet-result, #paper-wallet, .print-preview {
     display: block;
     width: 250mm;
     margin: 0;
