@@ -1,411 +1,178 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>XRP Paper Wallet | XRPL - XRP Ledger</title>
-
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Custom Styles -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' file:; style-src 'self' file:; img-src 'self' file: data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generate an XRP paper wallet locally. Download the source, disconnect from the internet, and keep your family seed offline.">
+    <meta name="theme-color" content="#202326">
+    <title>XRP Paper Wallet — offline account generation</title>
+    <link rel="icon" type="image/png" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="css/style.css">
-
-    <link rel="apple-touch-icon" sizes="57x57" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="vendor/ripple/XRP-Symbol-Kit/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="vendor/ripple/XRP-Symbol-Kit/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="vendor/ripple/XRP-Symbol-Kit/favicon/favicon-16x16.png">
-    <link rel="manifest" href="vendor/ripple/XRP-Symbol-Kit/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/printing.css">
+    <script defer src="vendor/xrpl/5.3.0/xrpl-latest-min.js"></script>
+    <script defer src="vendor/qrcode-generator/2.0.4/qrcode.js"></script>
+    <script defer src="js/init.js"></script>
 </head>
-
 <body>
-    <div class="navbar-fixed">
-        <nav class="ripple-text-blue" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo">
-                    <img src="vendor/ripple/XRP-Symbol-Kit/text-mark/xrp-text-mark-white.svg" />XRP Paper Wallet
-                    <span class="tag-beta red-text">beta</span>
-                    <!-- <img src="vendor/ripple_logos/ripple_logo_small.png" />XRP Paper Wallet
-                    <span class="red-text">beta</span> -->
-                </a>
-            </div>
-        </nav>
-    </div>
-    <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <br>
-                <br>
-                <h1 class="header">XRP Paper Wallet</h1>
-                <div class="row">
-                    <h5 class="header col s12 light">Secure and easy way to generate a cold wallet.</h5>
-                </div>
-                <!-- <div class="row center">
-                    <a href="#" id="generate-paper-wallet" class="btn-large waves-effect waves-light ripple-blue">Generate a new wallet</a>
-                </div> -->
-                <br>
-                <br>
-
+    <a class="skip-link" href="#generator">Skip to generator</a>
+    <header class="site-header page-width">
+        <div class="brand">
+            <img src="vendor/ripple/XRP-Symbol-Kit/symbol/xrp-symbol-white.svg" width="40" height="40" alt="">
+            <div>
+                <h1>XRP Paper Wallet</h1>
+                <p>Generate locally. Keep your seed offline.</p>
             </div>
         </div>
-        <div class="parallax">
-            <img src="img/background1.jpg" alt="">
-        </div>
-    </div>
+        <a class="source-link" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+    </header>
 
+    <main class="page-width">
+        <section class="offline-section" aria-labelledby="offline-heading">
+            <p class="eyebrow">Start offline</p>
+            <h2 id="offline-heading">Disconnect before you generate.</h2>
+            <p class="lead">The safest way to use this tool is to download it, disconnect from the internet, and open it locally. Use an air-gapped computer if possible.</p>
+            <div class="actions offline-actions">
+                <a id="download-zip" class="button button-primary" href="https://github.com/lgcarrier/xrppaperwallet/archive/refs/heads/master.zip">Download ZIP for offline use <span aria-hidden="true">↓</span></a>
+                <a id="online-generator-link" class="button button-secondary" href="#generator">Use online generator <span aria-hidden="true">→</span></a>
+            </div>
+            <ol class="offline-steps" aria-label="Offline preparation and backup steps">
+                <li><span>01</span><div><strong>Download &amp; extract</strong><small>Keep the whole folder together.</small></div></li>
+                <li><span>02</span><div><strong>Disconnect</strong><small>Turn off Wi-Fi and unplug Ethernet.</small></div></li>
+                <li><span>03</span><div><strong>Open index.html</strong><small>Use a clean browser without extensions.</small></div></li>
+                <li><span>04</span><div><strong>Generate &amp; back up</strong><small>Print or write down; store securely.</small></div></li>
+            </ol>
+        </section>
 
-    <!-- hot/warm/cold model -->
-    <div class="container">
-        <div class="section">
+        <section id="generator" class="generator-section" aria-labelledby="generator-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Your wallet</p>
+                <h2 id="generator-heading">Generate a paper wallet</h2>
+                <p>Creates an Ed25519 classic address and family seed in this browser. No account lookup or network connection is needed.</p>
+            </div>
+            <p id="online-notice" class="notice"><strong>Online use is less secure.</strong> A compromised website, browser, or device can expose your seed. Download and disconnect before creating a wallet you intend to fund.</p>
+            <p id="local-notice" class="notice" hidden><strong>Opened as a local file.</strong> This does not prove your computer is offline. Confirm that all network connections are disabled before continuing.</p>
+            <div class="actions generate-actions">
+                <button id="generate-paper-wallet" class="button button-secondary" type="button" disabled>Generate a new wallet <span aria-hidden="true">→</span></button>
+            </div>
+            <p id="generation-status" class="status" role="status">Loading local generation libraries…</p>
+            <p id="generation-error" class="error-message" role="alert" hidden></p>
+            <noscript><p class="error-message">JavaScript must be enabled to generate a wallet locally. No server or internet connection is required.</p></noscript>
+        </section>
 
-            <!--   Icon Section   -->
-            <div class="row">
+        <div id="wallet-result"></div>
+        <p id="print-status" class="status" role="status"></p>
+        <p id="print-error" class="error-message" role="alert" hidden></p>
 
-                <div class="col s12 center">
-                    <h3>
-                        The hot/warm/cold model
-                    </h3>
-                    <h4 class="ripple-text-blue">
-                        balance security and convenience
-                    </h4>
+        <section class="guidance-section" aria-labelledby="funding-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Before you fund it</p>
+                <h2 id="funding-heading">Back up first. Test with a small amount.</h2>
+            </div>
+            <div class="guidance-columns">
+                <div>
+                    <h3>Activation and reserves</h3>
+                    <p>A newly generated address is not activated on the XRP Ledger. An ordinary account is created after an incoming payment of at least the current base reserve is validated.</p>
+                    <dl class="reserves">
+                        <div><dt>Base reserve</dt><dd><strong>1 XRP</strong><span>1,000,000 drops</span></dd></div>
+                        <div><dt>Owner reserve</dt><dd><strong>0.2 XRP</strong><span>200,000 drops per reserve-counted object</span></dd></div>
+                    </dl>
+                    <p>These are Mainnet reserve requirements. Validators set them, and they can change. Reserve XRP is generally unavailable to spend while it is required by your account. Check the <a href="https://xrpl.org/reserves.html" target="_blank" rel="noopener noreferrer">official reserve documentation</a> before funding.</p>
+                    <p>Start with a small transfer that meets the current activation minimum. Verify the destination address and your recovery process before sending the full amount. Keep additional XRP available for transaction fees.</p>
                 </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center blue-text">
-                            <i class="fas fa-thermometer-empty"></i>
-                        </h2>
-                        <h5 class="center">Cold wallet</h5>
-
-                        <p class="light">Securely hold the majority of XRP and funds. To provide optimal security, this
-                            account's secret key
-                            should be offline.</p>
-
-                        <div class="row center">
-                            <a href="#paper-wallet" id="generate-paper-wallet"
-                                class="btn-large waves-effect waves-light ripple-blue">Generate
-                                a paper wallet</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center yellow-text">
-                            <i class="fas fa-thermometer-half"></i>
-                        </h2>
-                        <h5 class="center">Warm wallet</h5>
-
-                        <p class="light">Provide an additional layer of security between the cold and hot wallets.
-                            Unlike a hot wallet, the
-                            secret key of a warm wallet does not need to be online.</p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center red-text">
-                            <i class="fas fa-thermometer-full"></i>
-                        </h2>
-                        <h5 class="center">Hot wallet</h5>
-
-                        <p class="light">Conduct the day-to-day business of managing XRP withdrawals and deposits. Hot
-                            wallets need to be
-                            online to service instant withdrawal requests.</p>
-
-                        <div class="row center">
-                            <a href="https://ripple.com/xrp/buy-xrp/" target="_blank"
-                                class="btn-large waves-effect waves-light ripple-white-btn">Buy
-                                XRP</a>
-                        </div>
-
-                    </div>
+                <div>
+                    <h3>Your seed controls your funds</h3>
+                    <p><strong>Never share the family seed.</strong> Anyone who has it can control the account. The address is safe to share when receiving XRP; the seed and its QR code are private.</p>
+                    <p>Never enter the seed on a website. Recover only with verified, trusted wallet software under your control. Entering the seed on a connected device means it is no longer an offline secret.</p>
+                    <p>Keep multiple printed or handwritten copies in different secure physical locations. Consider a metal backup for larger amounts. Avoid screenshots, cloud storage, shared computers, and cloud printing.</p>
+                    <a class="text-link" href="https://xrpl.org/docs/tutorials/best-practices/key-management/offline-account-setup" target="_blank" rel="noopener noreferrer">Read the XRPL offline account setup tutorial <span aria-hidden="true">↗</span></a>
                 </div>
             </div>
+        </section>
 
-            <div class="row">
-                <div class="col">
-                    <p>You can replicate what financial institutions do and
-                        <a class="ripple-text-link" href="https://xrpl.org/issuing-and-operational-addresses.html"
-                            target="_blank">use multiple XRP Ledger addresses</a> to minimize the risk associated with
-                        a compromised secret key.
-                        The hot/warm/cold model is intended to balance security and convenience.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <section class="storage-section" aria-labelledby="storage-heading">
+            <h2 id="storage-heading">Separate storage from everyday use</h2>
+            <p>A cold wallet keeps its signing secret offline. A warm wallet is accessed occasionally with controlled signing. A hot wallet is available on a connected device for frequent transactions. Separate accounts can limit the funds exposed if one secret is compromised.</p>
+            <p>A paper backup helps only if the computer, generation process, printer, and physical storage are trustworthy.</p>
+        </section>
+    </main>
 
-    <!-- Generate Paper Wallet -->
-    <div id="paper-wallet" class="container" style="display:none;">
-        <!-- <div id="paper-wallet" class="container"> -->
-        <div class="section">
-
-            <div class="row">
-                <div class="col s12 center">
-                    <h3>
-                        This is your new XRP paper wallet
-                    </h3>
-                    <h4 class="ripple-text-blue">
-                        <strong>do not share</strong>... it's
-                        <strong>EXTREMELY</strong> precious&nbsp;
-                        <i class="fas fa-arrow-down"></i>
-                    </h4>
-                    <div class="row">
-                        <div class="col s12 center">
-                            <div id="generated-paper-wallet">
-                                <div id="wallet-front" class="wallet-front">
-                                    <img class="wallet-background" src="img/front-300dpi-paper-wallet.jpg" />
-                                    <div id="qrcode-address"></div>
-                                    <div id="qrcode-secret"></div>
-                                    <div id="cleartext-address-1"></div>
-                                    <div id="cleartext-address-2"></div>
-                                    <div id="cleartext-secret-1"></div>
-                                    <div id="cleartext-secret-2"></div>
-
-                                    <!-- <div id="pubkey">PUBLIC KEY</div>
-                                    <div id="pubkey_alt">PUBLIC KEY</div>
-                                    <div id="pubkey_qr"></div>
-                                    <div id="privkey">SECRET KEY</div>
-                                    <div id="privkey_alt">SECRET KEY</div>
-                                    <div id="privkey_qr"></div> -->
-                                </div>
-
-                                <div class="row">
-                                    <div class="col s12 center">
-                                        <a href="javascript:printWallet('wallet-front');"
-                                            class="btn-large waves-effect waves-light ripple-blue">
-                                            <i class="fas fa-print"></i>&nbsp;Print Front</a>
-                                    </div>
-                                </div>
-
-                                <div id="wallet-back" class="wallet-back">
-                                    <img class="wallet-background" src="img/back-300dpi-paper-wallet.jpg" />
-                                </div>
-
-                                <div class="row">
-                                    <div class="col s12 center">
-                                        <a href="javascript:printWallet('wallet-back');"
-                                            class="btn-large waves-effect waves-light ripple-blue">
-                                            <i class="fas fa-print"></i>&nbsp;Print Back</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12 center">
-                    <h3>This account is not activated yet...</h3>
-                    <h4 class="ripple-text-blue">Next step is to fund your new address</h4>
-                    <div class="row">
-                        <div class="col s12">
-                            <p>To fund a new address, you must send enough XRP to meet the reserve requirement. Once
-                                created,
-                                an account exists in the XRP Ledger's data tree forever.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- General informations about a paper wallet -->
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                <div class="col s12 center">
-                    <h3>
-                        Reserve requirement
-                    </h3>
-                </div>
-            </div>
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center blue-text">
-                            <i class="fas fa-angle-double-up"></i>
-                        </h2>
-                        <h5 class="center">Base Reserve</h5>
-
-                        <p class="light">The
-                            <strong>Base Reserve</strong> is a minimum amount of XRP that is required for every address
-                            in the ledger.
-                            Currently, this is
-                            <strong>10 XRP</strong> (10000000 drops).
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center blue-text">
-                            <i class="fas fa-angle-up"></i>
-                        </h2>
-                        <h5 class="center">Owner Reserve</h5>
-
-                        <p class="light">The
-                            <strong>Owner Reserve</strong> is an increase to the reserve requirement for each object
-                            that the address
-                            owns in the ledger. Currently, this is
-                            <strong>2 XRP</strong> (2000000 drops) per item.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col s12 m4">
-                    <div class="icon-block">
-                        <h2 class="center red-text">
-                            <i class="fas fa-ban"></i>
-                        </h2>
-                        <h5 class="center">Going Below the Reserve Requirement</h5>
-
-                        <p class="light">When an address holds less XRP than its current reserve requirement, it cannot
-                            send new transactions
-                            that would transfer XRP to others, or increase its own reserve. Even so, the address
-                            continues
-                            to exist in the ledger and can send other transactions as long as it has enough XRP to pay
-                            the
-                            transaction cost. The address can become able to send all types of transactions again if it
-                            receives
-                            enough XRP to meet its reserve requirement again.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <p>To submit transactions, an address must hold
-                        <a class="ripple-text-link" href="https://xrpl.org/reserves.html" target="_blank">a minimum
-                            amount of XRP in the shared global ledger</a>. You cannot send this XRP to other addresses.
-                        To fund a new address, you must send enough XRP to meet the reserve requirement.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="page-footer ripple-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">About</h5>
-                    <p class="">The goal of this tool is to democratize <a class="ripple-text-gray"
-                            href="https://xrpl.org/" target="_blank">XRP</a> cold wallets.<br />
-                        This project is not
-                        affiliated to <a class="ripple-text-gray" href="https://ripple.com" target="_blank">Ripple</a>
-                        or <a class="ripple-text-gray" href="https://xrpl.org/" target="_blank">XRPL</a>.
-                    </p>
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li>
-                            <a class="white-text" href="https://github.com/lgcarrier/xrppaperwallet" target="_blank">XRP
-                                Paper Wallet GitHub</a>
-                        </li>
-                        <li>
-                            <a class="white-text" href="https://github.com/ripple/ripple-lib" target="_blank">ripple-lib
-                                (RippleAPI) GitHub</a>
-                        </li>
-                        <li>
-                            <a class="white-text" href="https://xrpl.org/" target="_blank">XRP Ledger Project</a>
-                        </li>
-                        <li>
-                            <a class="white-text" href="https://github.com/xrpsymbol/xrpsymbol.github.io"
-                                target="_blank">XRP Symbol</a>
-                        </li>
-                        <li>
-                            <a class="white-text" href="https://ripplex.io/" target="_blank">RippleX</a>
-                        </li>
-                        <li>
-                            <a class="white-text" href="https://ripple.com/xrp" target="_blank">Ripple</a>
-                        </li>
+    <footer class="site-footer">
+        <div class="page-width">
+            <div class="footer-columns">
+                <div>
+                    <h2>About this tool</h2>
+                    <p>The goal of this tool is to democratize XRP cold wallets. This project is not affiliated with <a href="https://ripple.com" target="_blank" rel="noopener noreferrer">Ripple</a> or the <a href="https://xrpl.org/" target="_blank" rel="noopener noreferrer">XRP Ledger</a>.</p>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/lgcarrier/xrppaperwallet" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li>
+                        <li><a href="https://github.com/XRPLF/xrpl.js" target="_blank" rel="noopener noreferrer">xrpl.js</a></li>
+                        <li><a href="https://www.rlusdmarket.com" target="_blank" rel="noopener noreferrer">RLUSD Market</a></li>
+                        <li><a href="https://web.newton.co/r/ZPYBU6" target="_blank" rel="noopener noreferrer">Newton referral</a> <span>(the creator may receive a referral benefit)</span></li>
                     </ul>
                 </div>
-                <div class="col l3 s12">
-                    <script type="text/javascript"
-                        src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-                    <div class="coinmarketcap-currency-widget" data-currencyid="52" data-base="USD" data-secondary="BTC"
-                        data-ticker="false" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD"
-                        data-statsticker="false"></div>
+                <div>
+                    <h2>Disclaimer</h2>
+                    <p>This tool is provided as-is without any warranties. Use it at your own risk. The creators are not liable for any losses or damages. This is not legal advice. Please review the code on GitHub and conduct your own due diligence before use.</p>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Disclaimer</h5>
-                    <p class="grey-text text-lighten-4">This tool is provided as-is without any warranties. Use it at
-                        your own risk. The creators are not liable for any losses or damages. This is not legal advice.
-                        Please review the code on GitHub and conduct your own due diligence before use.</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by
-                <a class="ripple-text-gray" href="https://www.linkedin.com/in/lgcarrier/"
-                    target="_blank">Louis-Guillaume
-                    Carrier-Bédard</a>
-            </div>
+            <p class="credit">Made by <a href="https://www.linkedin.com/in/lgcarrier/" target="_blank" rel="noopener noreferrer">Louis-Guillaume Carrier-Bédard</a></p>
         </div>
     </footer>
 
+    <!-- Images load during initialization and then stay in place for generation and printing. -->
+    <div id="artwork-assets" hidden>
+        <img id="front-artwork" class="wallet-background" src="img/front-300dpi-paper-wallet.jpg" width="2962" height="971" alt="">
+        <img id="back-artwork" class="wallet-background" src="img/back-300dpi-paper-wallet.jpg" width="2962" height="971" alt="">
+    </div>
+    <p id="print-not-ready">Generate a wallet before printing. Then use Print front or Print back.</p>
 
-    <!-- Scripts-->
-
-    <!-- Font Awesome -->
-    <script defer src="vendor/fontawesome/5.0.2/js/all.js"></script>
-
-    <!-- XRP Ledger (xrpl.js) -->
-    <script src="https://unpkg.com/xrpl@4.0.0/build/xrpl-latest-min.js"></script>
-
-    <!-- UI Materialize -->
-    <script type="text/javascript" src="vendor/jquery/3.2.1/jquery-3.2.1.min.js"></script>
-    <script src="vendor/materialize/0.100.2/js/materialize.min.js"></script>
-
-    <!-- QR Code -->
-    <script defer src="vendor/qrcodejs/qrcode.min.js"></script>
-
-    <!-- Custom Initialization -->
-    <script src="js/init.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4094498-8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-QJCELMPRTM');
-    </script>
-
+    <template id="wallet-template">
+        <section id="paper-wallet" class="wallet-result" aria-labelledby="result-heading">
+            <div class="section-heading">
+                <p class="eyebrow">Generated locally</p>
+                <h2 id="result-heading" tabindex="-1">Your new paper wallet</h2>
+                <p>Back up both values now. Closing or reloading this page removes this wallet from view.</p>
+            </div>
+            <div class="credentials">
+                <section class="credential" aria-labelledby="address-heading">
+                    <div class="credential-copy">
+                        <h3 id="address-heading">Classic address <span>Share to receive XRP</span></h3>
+                        <code id="wallet-address" class="credential-value"></code>
+                        <p><strong>Not activated yet.</strong> An incoming payment of at least the current <strong>1 XRP</strong> base reserve must be validated to create an ordinary account. Test with a small amount first.</p>
+                    </div>
+                    <div id="address-qr" class="credential-qr" role="img" aria-label="QR code for the classic address"></div>
+                </section>
+                <section class="credential" aria-labelledby="seed-heading">
+                    <div class="credential-copy">
+                        <h3 id="seed-heading">Family seed <span>Keep secret</span></h3>
+                        <code id="wallet-seed" class="credential-value"></code>
+                        <p><strong>Never share this seed or its QR code.</strong> Anyone with either can control the account. Keep your backups private and offline.</p>
+                    </div>
+                    <div id="seed-qr" class="credential-qr" role="img" aria-label="Private QR code for the family seed"></div>
+                </section>
+            </div>
+            <div class="print-introduction">
+                <h3>Print and store securely</h3>
+                <p>Use an offline printer without cloud services. Print multiple copies and keep them in different secure physical locations; consider metal backups for larger amounts.</p>
+                <p class="print-instructions"><strong>Print settings:</strong> Letter or A4 · landscape · actual size / 100% · headers and footers off. Each side is 250 mm wide. Front and back print separately; check alignment on a test sheet before attempting double-sided printing.</p>
+            </div>
+            <div class="print-preview">
+                <div class="preview-heading"><h4>Front · contains your secret</h4><button class="button button-primary" type="button" data-print-side="front">Print front</button></div>
+                <div id="wallet-front" class="wallet-front wallet-sheet" aria-label="Front of the paper wallet, including private credentials">
+                    <span data-artwork="front"></span>
+                    <div id="qrcode-address" class="artwork-qr" aria-hidden="true"></div>
+                    <div id="qrcode-secret" class="artwork-qr" aria-hidden="true"></div>
+                    <div id="cleartext-address-1" class="artwork-text" aria-hidden="true"></div>
+                    <div id="cleartext-address-2" class="artwork-text" aria-hidden="true"></div>
+                    <div id="cleartext-secret-1" class="artwork-text" aria-hidden="true"></div>
+                    <div id="cleartext-secret-2" class="artwork-text" aria-hidden="true"></div>
+                </div>
+                <div class="preview-heading"><h4>Back · folding cover</h4><button class="button button-secondary" type="button" data-print-side="back">Print back</button></div>
+                <div id="wallet-back" class="wallet-back wallet-sheet" aria-label="Back of the paper wallet">
+                    <span data-artwork="back"></span>
+                </div>
+            </div>
+        </section>
+    </template>
 </body>
-
 </html>

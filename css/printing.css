@@ -1,69 +1,37 @@
-.wallet-front {
-    position: relative;
-}
-
-.wallet-front #qrcode-address {
-    position: absolute;
-    top: 120px;
-    left: 40px;
-}
-
-.wallet-front #qrcode-address img {
-    width: 100px;
-    height: 100px;
-}
-
-.wallet-front #cleartext-address-1 {
-    position: absolute;
-    top: 50px;
-    left: 35px;
-    font-weight: bold;
-    font-size: 14px;
-    transform: rotate(180deg);
-    color: black;
-}
-
-.wallet-front #cleartext-address-2 {
-    position: absolute;
-    top: 260px;
-    left: 35px;
-    font-weight: bold;
-    font-size: 14px;
-    color: black;
-}
-
-.wallet-front #qrcode-secret {
-    position: absolute;
-    top: 102px;
-    left: 817px;
-}
-
-.wallet-front #qrcode-secret img {
-    width: 125px;
-    height: 125px;
-}
-
-.wallet-front #cleartext-secret-1 {
-    position: absolute;
-    top: 75px;
-    left: 795px;
-    font-weight: bold;
-    font-size: 10px;
-    transform: rotate(180deg);
-    color: black;
-}
-
-.wallet-front #cleartext-secret-2 {
-    position: absolute;
-    top: 245px;
-    left: 795px;
-    font-weight: bold;
-    font-size: 10px;
-    color: black;
-}
-
-.wallet-background,
-.wallet-front,
-.wallet-back {
-    width: 1000px;
+/* Print the current DOM. Default browser printing selects the front. */
+@page { size: landscape; margin: 10mm; }
+@media print {
+  :root { color-scheme: light; }
+  *, *::before, *::after { animation: none !important; transition: none !important; box-shadow: none !important; }
+  html, body { width: auto; margin: 0; padding: 0; background: #fff; color: #000; }
+  body > :not(main):not(#print-not-ready),
+  main > :not(#wallet-result),
+  #paper-wallet > :not(.print-preview),
+  .print-preview > :not(.wallet-sheet) { display: none !important; }
+  main.page-width, #wallet-result, #paper-wallet, .print-preview {
+    display: block;
+    width: 250mm;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    animation: none;
+  }
+  .wallet-sheet {
+    width: 250mm;
+    height: auto;
+    aspect-ratio: 2962 / 971;
+    margin: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #wallet-front { display: block; }
+  #wallet-back { display: none; }
+  [data-print-side="back"] #wallet-front { display: none; }
+  [data-print-side="back"] #wallet-back { display: block; }
+  .artwork-text { font-size: 1.2cqw; }
+  #print-not-ready { display: block; margin: 0; font: 12pt / 1.5 sans-serif; }
+  body.has-wallet #print-not-ready { display: none; }
+  body:not(.has-wallet) main { display: none; }
 }
